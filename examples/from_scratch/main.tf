@@ -25,3 +25,7 @@ resource "local_file" "kubeconfig" {
   content    = module.astronomer_aws_with_vpc.kubeconfig
   filename   = "${path.root}/kubeconfig-${var.deployment_id}"
 }
+
+provider "kubernetes" {
+  version = "1.10.0"
+}
