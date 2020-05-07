@@ -168,3 +168,11 @@ variable "auto_minor_version_upgrade" {
   type        = bool
   default     = false
 }
+
+variable "lets_encrypt_dns_challenge_override" {
+  description = "Override to allow passing in custom values into acme_certificate dns challenge configuration"
+  type        = map
+  default     = {
+      AWS_PROPAGATION_TIMEOUT = 900
+  }
+}
